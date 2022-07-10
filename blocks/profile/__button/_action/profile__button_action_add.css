@@ -1,4 +1,4 @@
-.profile__button_add {
+.profile__button_action_add {
   border: 2px solid #fff;
   background-color: #000;
   width: 150px;
@@ -10,12 +10,12 @@
 }
 
 @media screen and (max-width: 767px) {
-  .profile__button_add {
+  .profile__button_action_add {
     width: 282px;
     margin-top: 36px;
   }
 }
 
-.profile__button_add:hover {
+.profile__button_action_add:hover {
   opacity: 0.6;
 }

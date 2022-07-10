@@ -11,14 +11,14 @@
   background-color: transparent;
 }
 
-.card__button_like:hover {
+.card__button:hover {
   background-image: url(../../../images/like_hover.svg);
 }
 
-.card__button_like:active {
+.card__button:active {
   background-image: url(../../../images/like_active.svg);
 }
 
-.card__button_like:after {
+.card__button:after {
   background-image: url(../../../images/like_active.svg);
 }

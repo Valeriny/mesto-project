@@ -1,4 +1,4 @@
-.profile__button_edit {
+.profile__button_action_edit {
   border: 1px solid #fff;
   background-color: #000;
   width: 24px;
@@ -8,6 +8,6 @@
   justify-content: center;
 }
 
-.profile__button_edit:hover {
+.profile__button_action_edit:hover {
   opacity: 0.6;
 }
