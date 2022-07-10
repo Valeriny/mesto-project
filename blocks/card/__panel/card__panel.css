@@ -1,0 +1,9 @@
+.card__panel{
+    margin: 25px 15px 31px 21px;
+    padding: 0;
+    max-width: 246px;
+    display: grid;
+    grid-template-columns: 1fr 27px;
+    column-gap: 20px;
+    box-sizing: border-box;
+}
