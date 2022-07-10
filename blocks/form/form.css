@@ -1,15 +1,15 @@
-.form{
-    width:430px;
-    height:330px;
-    background-color:#fff;
-    border-radius: 25px;
-    display:flex;
-    flex-direction: column;
+.form {
+  width: 430px;
+  height: 330px;
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
-@media screen and (max-width: 767px){
-    .form {
-        width: 282px;
-        height: 322px;
-    }
+@media screen and (max-width: 767px) {
+  .form {
+    width: 282px;
+    height: 322px;
   }
+}

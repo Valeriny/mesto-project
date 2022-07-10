@@ -1,15 +1,15 @@
-.logo {
+.header__logo {
   margin: 0 0 41px;
-  padding:0;
+  padding: 0;
   padding-top: 33px;
   max-width: 142px;
-  background-image: url(../../images/logo.svg);
+  background-image: url(../../../images/logo.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-  .logo {
+  .header__logo {
     margin: 28px auto 32px 27px;
     padding-top: 25px;
     min-width: 104px;
