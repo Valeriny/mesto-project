@@ -14,4 +14,4 @@
 
 Картинки взяты из Фигмы и [оптимизированы](https://tinypng.com/), чтобы сайт загружался быстрее.
 
-[Посмотрите сайт по ссылке →]([https://valeriny.github.io/russian-travel/](https://valeriny.github.io/mesto-project/))
+[Посмотрите сайт по ссылке →](https://valeriny.github.io/mesto-project/)
