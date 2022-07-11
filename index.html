@@ -13,21 +13,25 @@
     </header>
 
     <main class="content">
-      <div class="profile">
+      <section class="profile">
         <img src="images/avatar.jpg" alt="Профиль" class="profile__avatar" />
         <div class="profile__info">
           <h1 class="profile__name">
             Жак-Ив Кусто
-            <button class="profile__button profile__button_action_edit">
-              <img src="images/Edit.svg" alt="Кнопка изменить" />
-            </button>
+            <button
+              class="profile__button profile__button_action_edit"
+              aria-label="Редактировать"
+              type="button"
+            ></button>
           </h1>
           <p class="profile__status">Исследователь океана</p>
         </div>
-        <button class="profile__button profile__button_action_add">
-          <img src="images/button_header.svg" alt="Кнопка добавить" />
-        </button>
-      </div>
+        <button
+          class="profile__button profile__button_action_add"
+          aria-label="Добавить"
+          type="button"
+        ></button>
+      </section>
       <section class="section">
         <div class="card">
           <img
@@ -37,35 +41,50 @@
           />
           <div class="card__panel">
             <h2 class="card__title">Карачаевск</h2>
-            <button class="card__button"></button>
+            <button
+              class="card__button card__button_active"
+              type="button"
+            ></button>
           </div>
         </div>
         <div class="card">
           <img src="images/Elbrus.jpg" alt="Гора Эльбрус" class="card__image" />
           <div class="card__panel">
             <h2 class="card__title">Гора Эльбрус</h2>
-            <button class="card__button"></button>
+            <button
+              class="card__button card__button_active"
+              type="button"
+            ></button>
           </div>
         </div>
         <div class="card">
           <img src="images/Dombai.jpg" alt="Домбай" class="card__image" />
           <div class="card__panel">
             <h2 class="card__title">Домбай</h2>
-            <button class="card__button"></button>
+            <button
+              class="card__button card__button_active"
+              type="button"
+            ></button>
           </div>
         </div>
         <div class="card">
           <img src="images/Elbrus.jpg" alt="Гора Эльбрус" class="card__image" />
           <div class="card__panel">
             <h2 class="card__title">Гора Эльбрус</h2>
-            <button class="card__button"></button>
+            <button
+              class="card__button card__button_active"
+              type="button"
+            ></button>
           </div>
         </div>
         <div class="card">
           <img src="images/Dombai.jpg" alt="Домбай" class="card__image" />
           <div class="card__panel">
             <h2 class="card__title">Домбай</h2>
-            <button class="card__button"></button>
+            <button
+              class="card__button card__button_active"
+              type="button"
+            ></button>
           </div>
         </div>
         <div class="card">
@@ -76,30 +95,31 @@
           />
           <div class="card__panel">
             <h2 class="card__title">Карачаево-Черкессия</h2>
-            <button class="card__button"></button>
+            <button
+              class="card__button card__button_active"
+              type="button"
+            ></button>
           </div>
         </div>
       </section>
-      <div class="popup popup__opened">
+      <div class="popup popup_opened">
         <div class="popup__container">
-          <form action="#" class="form">
+          <form action="#" class="popup__form" name="edit profile">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <div class="popup__box">
-              <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                value="Жак-Ив Кусто"
-                class="popup__field"
-              />
-              <input
-                type="text"
-                id="status"
-                name="status"
-                value="Исследователь океана"
-                class="popup__field"
-              />
-            </div>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              value="Жак-Ив Кусто"
+              class="popup__field popup__field_full-name"
+            />
+            <input
+              type="text"
+              id="status"
+              name="status"
+              value="Исследователь океана"
+              class="popup__field popup__field_status"
+            />
             <button
               type="submit"
               class="popup__button popup__button_action_save"
