@@ -16,18 +16,16 @@
       <section class="profile">
         <img src="images/avatar.jpg" alt="Профиль" class="profile__avatar" />
         <div class="profile__info">
-          <h1 class="profile__name">
-            Жак-Ив Кусто
-            <button
-              class="profile__button profile__button_action_edit"
-              aria-label="Редактировать"
-              type="button"
-            ></button>
-          </h1>
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button
+            class="profile__edit-button"
+            aria-label="Редактировать"
+            type="button"
+          ></button>
           <p class="profile__status">Исследователь океана</p>
         </div>
         <button
-          class="profile__button profile__button_action_add"
+          class="profile__add-button"
           aria-label="Добавить"
           type="button"
         ></button>
@@ -103,7 +101,6 @@
             <button
               class="card__button card__button_active"
               type="button"
-              aria-label="Лайкнуть"
             ></button>
           </div>
         </div>
@@ -113,30 +110,20 @@
           <form action="#" class="popup__form" name="edit profile">
             <h2 class="popup__title">Редактировать профиль</h2>
             <input
-              type="text"
               id="full-name"
               name="full-name"
               value="Жак-Ив Кусто"
-              class="popup__field popup__field_full-name"
+              class="popup__field-fullname"
             />
             <input
-              type="text"
               id="status"
               name="status"
               value="Исследователь океана"
-              class="popup__field popup__field_status"
+              class="popup__field-status"
             />
-            <button
-              type="submit"
-              class="popup__button popup__button_action_save"
-            >
-              Сохранить
-            </button>
+            <button type="submit" class="popup__save-button">Сохранить</button>
           </form>
-          <button
-            type="button"
-            class="popup__button popup__button_action_close"
-          ></button>
+          <button type="button" class="popup__close-button"></button>
         </div>
       </div>
     </main>
