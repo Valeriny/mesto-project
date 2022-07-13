@@ -4,21 +4,18 @@
   box-sizing: border-box;
   font-weight: 500;
   font-size: 42px;
-  line-height: 48px;
   color: #fff;
   max-width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  align-self: flex-start;
+  align-self: start;
 }
 
 @media screen and (max-width: 767px) {
   .profile__name {
     max-width: 282px;
     font-size: 27px;
-    line-height: 33px;
     text-align: center;
-    gap: 10px;
   }
 }
