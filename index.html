@@ -31,104 +31,96 @@
         ></button>
       </section>
       <section class="section">
-        <div class="card">
-          <img
-            src="images/Karachaevsk.jpg"
-            alt="Карачаевск"
-            class="card__image"
-          />
-          <div class="card__panel">
-            <h2 class="card__title">Карачаевск</h2>
-            <button
-              class="card__button card__button_active"
-              type="button"
-              aria-label="Лайкнуть"
-            ></button>
-          </div>
+        <ul class="cards"></ul>
+      </section>      
+      <div class="popup" id="add-form">
+        <div class="popup__container">
+          <form action="#" class="popup__form" name="add-form">
+            <h2 class="popup__title">Новое место</h2>
+            <input
+              id="title"
+              name="title"
+              value=""
+              class="popup__field"
+              placeholder="Название"
+              required
+              type="text"
+              minlength="2"
+            />
+            <input
+              id="link"
+              name="link"
+              value=""
+              class="popup__field"
+              placeholder="Ссылка на картинку"
+              required
+              type="url"
+            />
+            <button type="submit" class="popup__save-button" id="create-button">Создать</button>
+          </form>
+          <button type="button" class="popup__close-button" id="popup-add__close-button"></button>
         </div>
-        <div class="card">
-          <img src="images/Elbrus.jpg" alt="Гора Эльбрус" class="card__image" />
-          <div class="card__panel">
-            <h2 class="card__title">Гора Эльбрус</h2>
-            <button
-              class="card__button card__button_active"
-              type="button"
-              aria-label="Лайкнуть"
-            ></button>
-          </div>
-        </div>
-        <div class="card">
-          <img src="images/Dombai.jpg" alt="Домбай" class="card__image" />
-          <div class="card__panel">
-            <h2 class="card__title">Домбай</h2>
-            <button
-              class="card__button card__button_active"
-              type="button"
-              aria-label="Лайкнуть"
-            ></button>
-          </div>
-        </div>
-        <div class="card">
-          <img src="images/Elbrus.jpg" alt="Гора Эльбрус" class="card__image" />
-          <div class="card__panel">
-            <h2 class="card__title">Гора Эльбрус</h2>
-            <button
-              class="card__button card__button_active"
-              type="button"
-              aria-label="Лайкнуть"
-            ></button>
-          </div>
-        </div>
-        <div class="card">
-          <img src="images/Dombai.jpg" alt="Домбай" class="card__image" />
-          <div class="card__panel">
-            <h2 class="card__title">Домбай</h2>
-            <button
-              class="card__button card__button_active"
-              type="button"
-              aria-label="Лайкнуть"
-            ></button>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="images/Karachaevsk.jpg"
-            alt="Карачаево-Черкессия"
-            class="card__image"
-          />
-          <div class="card__panel">
-            <h2 class="card__title">Карачаево-Черкессия</h2>
-            <button
-              class="card__button card__button_active"
-              type="button"
-            ></button>
-          </div>
-        </div>
-      </section>
-      <div class="popup popup_opened">
+      </div>
+      <div class="popup" id="edit-form">
         <div class="popup__container">
           <form action="#" class="popup__form" name="edit-profile">
             <h2 class="popup__title">Редактировать профиль</h2>
             <input
               id="full-name"
               name="full-name"
-              value="Жак-Ив Кусто"
+              value=""
               class="popup__field"
+              required
+              type="text"
+              minlength="2"
+              placeholder="Имя"
+              
             />
             <input
               id="status"
               name="status"
-              value="Исследователь океана"
+              value=""
               class="popup__field"
+              minlength="2"
+              required
+              type="text"
+              placeholder="Название"                        
             />
-            <button type="submit" class="popup__save-button">Сохранить</button>
+            <button type="submit" class="popup__save-button" id="save-button">Сохранить</button>
           </form>
-          <button type="button" class="popup__close-button"></button>
+          <button type="button" class="popup__close-button" id="popup-edit__close-button"></button>
         </div>
       </div>
+
+     
+      
+        <div class="popup__image" id="popup-image">
+        <div class="popup__image-container">
+
+          <img src="#" class=popup__photo alt="">
+
+          <button type="button" class="popup__close-button" id="popup-image__close-button"></button>
+          <h2 class="popup__image-title">Название картинки</h2>
+        </div>
+      </div>
+    
     </main>
+
     <footer class="footer">
       <p class="footer__copyright">© 2022 Валерия Блинова</p>
     </footer>
+
+    <template id="cards-template">
+      <li class="card">
+        <button class="card__delete" type="button"></button>
+        <img class="card__image" src="#" alt />
+        <div class="card__panel">
+          <h2 class="card__title"></h2>
+          <button class="card__button"  type="button"></button>
+        </div>
+      </li>
+    </template>
+
+    <script src="pages/index.js"></script>
   </body>
 </html>
