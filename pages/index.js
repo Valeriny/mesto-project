@@ -16,7 +16,7 @@ const initialCardsTemplate = document.getElementById("cards-template");
 const popupImage = document.querySelector(".popup__image");
 const photo = popupImage.querySelector(".popup__photo");
 const photoTitle=popupImage.querySelector(".popup__image-title");
-const buttonClose=document.querySelectorAll(".popup__close-button");
+const buttonsClose=document.querySelectorAll(".popup__close-button");
 const initialCards = [
   {
     name: "Архыз",
@@ -60,7 +60,7 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 };
 
-[...buttonClose].forEach((button) => {
+[...buttonsClose].forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
@@ -79,13 +79,14 @@ function getValueFormEdit() {
   profileStatus.textContent = valueProfile.status;
 };
 
-buttonSaveFormEdit.addEventListener("click", function (event) {
+
+formEdit.addEventListener("submit", function (event) {
   event.preventDefault();
   getValueFormEdit();
   closePopup(formEdit); 
 });
 
-function activeLike (like){
+function toggleLike (like){
   like.addEventListener('click', () => like.classList.toggle('card__button_active'));
 };
 
@@ -96,6 +97,7 @@ function deleteCard (button, card){
 function openPictureView(image) {
   image.addEventListener("click", function () {
     photo.src = image.src;
+    photo.alt = image.alt;
     photoTitle.textContent = image.alt;
     openPopup(popupImage);
 });
@@ -103,19 +105,19 @@ function openPictureView(image) {
 
 function createCard(item) {
   const initialCardTemplate = initialCardsTemplate.content.querySelector(".card");
-  const CardElement = initialCardTemplate.cloneNode(true);
-  const img = CardElement.querySelector(".card__image");
-  const h2 = CardElement.querySelector(".card__title");
-  const buttonLike = CardElement.querySelector(".card__button");
-  const buttonDelete = CardElement.querySelector(".card__delete");
-  activeLike (buttonLike);
-  deleteCard (buttonDelete, CardElement);
+  const сardElement = initialCardTemplate.cloneNode(true);
+  const img = сardElement.querySelector(".card__image");
+  const caption = сardElement.querySelector(".card__title");
+  const buttonLike = сardElement.querySelector(".card__button");
+  const buttonDelete = сardElement.querySelector(".card__delete");
+  toggleLike (buttonLike);
+  deleteCard (buttonDelete, сardElement);
   openPictureView(img);
   img.src = item.link;
   img.alt = item.name;  
-  h2.textContent = item.name;
+  caption.textContent = item.name;
   console.log(img);
-return CardElement
+return сardElement
 };
 
 function addNewCard(item) {
@@ -128,7 +130,7 @@ function clearingFormAdd() {
   formLinkPlace.value = "";  
 };
 
-buttonCreateFormAdd.addEventListener("click", function (event) {
+formAdd.addEventListener("submit", function (event) {
   event.preventDefault();
   const cardData = {
     name: formNamePlace.value,
