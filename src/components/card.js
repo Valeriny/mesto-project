@@ -29,9 +29,9 @@ const initialCards = [
   },
 ];
 
-function toggleLike (like){
-  like.addEventListener('click', () => like.classList.toggle('card__button_active'));
-};
+function toggleLike (like){ 
+  like.classList.toggle('card__button_active')
+}
 
 function deleteCard (button, card){
   button.addEventListener('click', () => card.remove());
@@ -44,9 +44,9 @@ function createCard(item) {
   const caption = сardElement.querySelector(".card__title");
   const buttonLike = сardElement.querySelector(".card__button");
   const buttonDelete = сardElement.querySelector(".card__delete");
-  toggleLike (buttonLike);
+  buttonLike.addEventListener('click', () => toggleLike (buttonLike));
   deleteCard (buttonDelete, сardElement);
-  openPictureView(img);
+  img.addEventListener('click', () => openPictureView(img));
   img.src = item.link;
   img.alt = item.name;  
   caption.textContent = item.name;
@@ -63,4 +63,4 @@ initialCards.forEach(function (item) {
   initialCardsList.append(initialCardsElement);
 });
 
-export { createCard, addNewCard, deleteCard, toggleLike };
+export {addNewCard };

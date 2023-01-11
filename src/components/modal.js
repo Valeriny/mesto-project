@@ -1,11 +1,20 @@
-import {  buttonsClose, profileName, profileStatus, formProfileName, formProfileStatus, formNamePlace, formLinkPlace, popup, popupImage, photo, photoTitle} from './utils.js'
-
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-};
+import {  buttonsClose, popupImage, photo, photoTitle} from './utils.js'
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEsc);
+};
+
+function closeByEsc(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup); 
+    }
+} 
+
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
 };
 
 [...buttonsClose].forEach((button) => {
@@ -13,31 +22,11 @@ function closePopup(popup) {
   button.addEventListener('click', () => closePopup(popup));
 });
 
-function getValueFormEdit() {
-  const valueProfile = {
-    name: formProfileName.value,
-    status: formProfileStatus.value,
-  };
-  profileName.textContent = valueProfile.name;
-  profileStatus.textContent = valueProfile.status;
-};
-
-  function clearingFormAdd() {  
-    formNamePlace.value = "";
-    formLinkPlace.value = "";  
-  };
-
-  function openPictureView(image) {
-    image.addEventListener("click", function () {
+  function openPictureView(image) {   
       photo.src = image.src;
       photo.alt = image.alt;
       photoTitle.textContent = image.alt;
       openPopup(popupImage);
-  });
   };
 
-
-
-
-
-  export { closePopup, openPopup, getValueFormEdit, clearingFormAdd, openPictureView };
+  export { closePopup, openPopup, openPictureView };

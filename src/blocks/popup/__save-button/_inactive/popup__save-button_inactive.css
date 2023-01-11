@@ -3,9 +3,10 @@
     color: #000;
     border: 1px solid #000000;
     border-radius: 2px;
-    opacity: 20%;
+    opacity: 0.2;
+    cursor:default;
 }
 
-.popup__save-button:hover {
-    opacity: none;
-  }
+.popup__save-button_inactive:hover{
+    opacity: 0.2;
+}

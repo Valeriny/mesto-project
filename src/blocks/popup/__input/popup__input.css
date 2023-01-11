@@ -2,6 +2,7 @@
     margin: 0 auto 30px;
     padding: 0;
     box-sizing: border-box;
+    position: relative;
     max-width: 358px;
     display: flex;
     gap: 5px;

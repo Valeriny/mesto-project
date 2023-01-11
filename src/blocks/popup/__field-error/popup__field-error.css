@@ -1,5 +1,8 @@
 .popup__field-error{
     width:100%;
+    position:absolute;
+    top:33px;
+    left:0;
     display: none;
     margin: 0;
     padding: 0;
