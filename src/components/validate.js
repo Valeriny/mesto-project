@@ -37,7 +37,6 @@ const hasInvalidInput = (inputList) => {
 const disableButton = (buttonElement, settings) => {
   buttonElement.setAttribute("disabled", true);
   buttonElement.classList.add(settings.inactiveButtonClass);
-  console.log(settings.inactiveButtonClass);
 }
 
 const enableButton = (buttonElement, settings) => {

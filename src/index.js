@@ -56,6 +56,7 @@ formAdd.addEventListener("submit", function (event) {
   addNewCard(cardData);  
   formNamePlace.value = ""; 
   formLinkPlace.value = ""; 
+  buttonCreateFormAdd.setAttribute("disabled", true);
   buttonCreateFormAdd.classList.add("popup__save-button_inactive");
   closePopup(formAdd);  
 });

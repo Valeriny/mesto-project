@@ -33,8 +33,8 @@ function toggleLike (like){
   like.classList.toggle('card__button_active')
 }
 
-function deleteCard (button, card){
-  button.addEventListener('click', () => card.remove());
+function deleteCard ( card){
+  card.remove();
 };
 
 function createCard(item) {
@@ -44,8 +44,8 @@ function createCard(item) {
   const caption = cardElement.querySelector(".card__title");
   const buttonLike = cardElement.querySelector(".card__button");
   const buttonDelete = cardElement.querySelector(".card__delete");
-  buttonLike.addEventListener('click', () => toggleLike (buttonLike));
-  deleteCard (buttonDelete, cardElement);
+  buttonLike.addEventListener('click', () => toggleLike (buttonLike));  
+  buttonDelete.addEventListener('click', () => deleteCard (cardElement));
   img.addEventListener('click', () => openPictureView(img));
   img.src = item.link;
   img.alt = item.name;  
