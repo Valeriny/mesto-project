@@ -9,8 +9,8 @@ function addCards(cardName, cardLink){
 };
 
 function controlStatusLike(card) {
-  const likeCard = card.querySelector('.card__button');
-  return (likeCard.classList.contains('card__button_active'));
+  const likeCard = card.querySelector(".card__button");
+  return (likeCard.classList.contains("card__button_active"));
 }
 
 function createCard(userId, item) {
@@ -24,7 +24,7 @@ function createCard(userId, item) {
   caption.textContent=item.name;
   numberLikesCard.textContent = item.likes.length;  
   if (userId != item.owner._id) {
-    buttonDelete.classList.remove("card__delete-deactive");
+    buttonDelete.classList.add("card__delete-deactive");
   }
  buttonDelete.addEventListener('click', () => trackdeleteCard(item._id, buttonDelete));
   img.addEventListener('click', () => openPictureView(img));
@@ -35,9 +35,9 @@ function createCard(userId, item) {
 return cardElement
 };
 
-function replaceCard (numberLikes, userId, item) {
-  const cardLikeBtn = item.querySelector(".card__button");
-  const like = item.querySelector(".card__like-number");
+function replaceCard (numberLikes, userId, cardElement) {
+  const cardLikeBtn = cardElement.querySelector(".card__button");
+  const like = cardElement.querySelector(".card__like-number");
   if (numberLikes.length != 0) {
     numberLikes.forEach((likeOwner) => {
       if (likeOwner._id === userId) {

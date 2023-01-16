@@ -42,17 +42,17 @@ Promise.all([getUserData(), getInitialCards()])
   })
 
 
-function controlLikeCard(status, userid, cardId, card) {
+function controlLikeCard(status, cardId, userId, card) {
   !status ? addLikeCard(cardId)
     .then((res) => {
-      replaceCard(res.likes, userid, card);
+      replaceCard(res.likes, userId, card);
     })
     .catch((err) => {
       console.error(err);
     })
     : deleteLikeCard(cardId)
       .then((res) => {
-        replaceCard(res.likes, userid, card);
+        replaceCard(res.likes, userId, card);
       })
       .catch((err) => {
         console.error(err);
