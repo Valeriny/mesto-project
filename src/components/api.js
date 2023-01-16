@@ -4,7 +4,7 @@ const config = {
       authorization: 'de832a94-d820-48ab-8766-e44f65d14218',
       'Content-Type': 'application/json'
     }
-  }
+  };
 
   const getInitialCards = () => {
     return fetch(`${config.baseUrl}/cards`, {
@@ -16,7 +16,7 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       })
-  }
+  };
 
   const getUserData = () => {
     return fetch(`${config.baseUrl}/users/me`, {
@@ -28,7 +28,7 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       })
-  }
+  };
 
   const sendProfileData = (nameProfile, aboutProfile) => {
     return fetch(`${config.baseUrl}/users/me`, {
@@ -46,7 +46,7 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       })
-  }
+  };
 
   const sendProfileAvatar = (avatarProfile) => {
     return fetch(`${config.baseUrl}/users/me/avatar`, {
@@ -63,7 +63,7 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       })
-  }
+  };
 
  const createNewCard = (nameCard, linkCard) => {
     return fetch(`${config.baseUrl}/cards`, {
@@ -81,9 +81,9 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       })
-  }
+  };
 
-  const likeCard = (cardId) => {
+  const addLikeCard = (cardId) => {
     return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
       method: 'PUT',
       headers: config.headers
@@ -94,8 +94,9 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       });      
-  }
-  
+  };  
+
+
   
   const deleteLikeCard = (cardId) => {
     return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
@@ -108,7 +109,7 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       });
-  }
+  };
 
    const deleteCard = (cardId) => {
     return fetch(`${config.baseUrl}/cards//${cardId}`, {
@@ -121,9 +122,9 @@ const config = {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
       });
-  }
+  };
 
 
 
-  export {getInitialCards, getUserData, sendProfileData, createNewCard, sendProfileAvatar, likeCard, deleteLikeCard, deleteCard};
+  export {getInitialCards, getUserData, sendProfileData, createNewCard, sendProfileAvatar, addLikeCard, deleteLikeCard, deleteCard};
 

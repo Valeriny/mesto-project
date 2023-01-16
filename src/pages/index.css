@@ -41,5 +41,6 @@
 @import url("../blocks/popup/__photo/popup__photo.css");
 @import url("../blocks/profile/__avatar-button/profile__avatar-button.css");
 @import url("../blocks/profile/__container-avatar/profile__container-avatar.css");
+@import url("../blocks/card/__delete-deactive.css/card__delete-deactive.css");
 @import url("../blocks/card/__like/card__like.css");
 @import url("../blocks/card/__like-number/card__like-number.css");

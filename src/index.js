@@ -7,7 +7,6 @@ import {
   formEdit,
   formAvatar,
   buttonEdit,
-  likesCard,
   formAdd,
   buttonAdd,
   buttonAvatar,
@@ -22,36 +21,41 @@ import {
   formProfileAvatar
 } from "./components/utils.js";
 
-import { addNewCard, addCards} from "./components/card.js";
+import { addNewCard, addCards, replaceCard} from "./components/card.js";
 
 import { closePopup, openPopup } from "./components/modal.js";
 
 import { enableValidation } from "./components/validate.js";
 
-import {getInitialCards, getUserData, sendProfileData, createNewCard, sendProfileAvatar, deleteCard, likeCard, deleteLikeCard} from "./components/api.js";
+import {getInitialCards, getUserData, sendProfileData, createNewCard, sendProfileAvatar, deleteCard, addLikeCard, deleteLikeCard} from "./components/api.js";
 
-getInitialCards()
-.then((result) => {
- result.forEach((card)=> addCards(card))
-})
-.catch((err) => {
-  console.error(err); 
-}); 
+let profileUser;
 
-function controlLikeCard(status, cardId, card) {
-  !status ? likeCard(cardId)
+Promise.all([getUserData(), getInitialCards()])
+  .then(([user, cards]) => {
+    profileUser = user;
+    fullProfile(user.name, user.about, user.avatar);
+    cards.forEach((card)=> addCards(user._id, card));
+  })
+  .catch((err) => {
+    console.error(err);
+  })
+
+
+function controlLikeCard(status, userid, cardId, card) {
+  !status ? addLikeCard(cardId)
     .then((res) => {
-      replaceLike(res.likes, card);
+      replaceCard(res.likes, userid, card);
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      console.error(err);
     })
     : deleteLikeCard(cardId)
       .then((res) => {
-        replaceLike(res.likes, card);
+        replaceCard(res.likes, userid, card);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.error(err);
       })
 } 
 
@@ -65,15 +69,6 @@ function trackdeleteCard(cardId, button){
     console.error(err); 
   }); 
 };
-
-
-getUserData()
-.then((result) => {
-  fullProfile(result.name, result.about, result.avatar);
-})
-.catch((err) => {
-  console.error(err); 
-}); 
 
 function sendProfile(){
   renderLoading(true, buttonSaveProfile);
@@ -110,7 +105,7 @@ function sendNewCard(){
   renderLoading(true, buttonCreateFormAdd);
   createNewCard(formNamePlace.value, formLinkPlace.value)
   .then((card) => {
-    addNewCard(profileGlobal._id, card);
+    addNewCard(profileUser._id, card);
     closePopup(formAdd);
   })
   .finally(() =>{
@@ -121,7 +116,6 @@ function sendNewCard(){
   }); 
 }
 
-likesCard.forEach((item)=>console.log(item))
 
 function renderLoading(isLoading, button){
   if(isLoading){
@@ -209,4 +203,5 @@ enableValidation({
   errorClass: "popup__field-error_active",
 });
 
-export{trackdeleteCard, controlLikeCard};
+
+export{trackdeleteCard, controlLikeCard, profileUser};

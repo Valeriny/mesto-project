@@ -23,6 +23,6 @@ const popupImage = document.querySelector(".popup__image");
 const photo = popupImage.querySelector(".popup__photo");
 const photoTitle=popupImage.querySelector(".popup__image-title");
 const buttonsClose=document.querySelectorAll(".popup__close-button");
-const likesCard=document.querySelectorAll(".card__like-number")
 
-export { content, likesCard, profileName, profileStatus, profileAvatar, formEdit, formInput, formAvatar, buttonEdit, buttonAvatar, buttonSaveProfile, formProfileName, formProfileStatus, formProfileAvatar, formAdd, buttonAdd, buttonCreateFormAdd, buttonUpdateAvatar, formNamePlace, formLinkPlace, initialCardsList, initialCardsTemplate, popupImage, photo, buttonsClose, photoTitle}
+
+export { content, profileName, profileStatus, profileAvatar, formEdit, formInput, formAvatar, buttonEdit, buttonAvatar, buttonSaveProfile, formProfileName, formProfileStatus, formProfileAvatar, formAdd, buttonAdd, buttonCreateFormAdd, buttonUpdateAvatar, formNamePlace, formLinkPlace, initialCardsList, initialCardsTemplate, popupImage, photo, buttonsClose, photoTitle}
