@@ -13,7 +13,14 @@
 
     <main class="content">
       <section class="profile">
-        <img src="<%=require('./images/avatar.jpg')%>" alt="Профиль" class="profile__avatar" />
+        <div class="profile__container-avatar">
+        <button             
+        class="profile__avatar-button"
+        aria-label="Редактировать"
+        type="button">
+      </button>
+        <img src="<%=require('./images/avatar.jpg')%>" alt="Профиль" class="profile__avatar" />  
+      </div>    
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button
@@ -110,9 +117,27 @@
           <button type="button" class="popup__close-button" id="popup-edit__close-button"></button>
         </div>
       </div>
-
-     
-      
+      <div class="popup popup__avatar-form" id="popup-avatar">
+        <div class="popup__container">
+          <form action="#" class="popup__form" name="avatar-form" novalidate>
+            <h2 class="popup__title">Обновить аватар</h2>            
+          <div class="popup__input">
+            <input
+              id="avatar"
+              name="avatar"
+              value=""
+              class="popup__field"
+              placeholder="Ссылка на картинку"
+              required
+              type="url"
+            />
+            <span class="popup__field-error avatar-error"></span>
+          </div>
+            <button type="submit" class="popup__save-button" id="update-button">Сохранить</button>
+          </form>
+          <button type="button" class="popup__close-button" id="popup-avatar__close-button"></button>
+        </div>
+      </div>        
         <div class="popup popup__image" id="popup-image">
         <div class="popup__image-container">
 
@@ -126,7 +151,7 @@
     </main>
 
     <footer class="footer">
-      <p class="footer__copyright">© 2022 Валерия Блинова</p>
+      <p class="footer__copyright">© 2023 Валерия Блинова</p>
     </footer>
 
     <template id="cards-template">
@@ -135,7 +160,10 @@
         <img class="card__image" src="#" alt />
         <div class="card__panel">
           <h2 class="card__title"></h2>
+          <div class="card__like">
           <button class="card__button"  type="button"></button>
+          <h3 class="card__like-number">0</h3>
+        </div>
         </div>
       </li>
     </template>

@@ -1,41 +1,20 @@
-import { initialCardsList, initialCardsTemplate } from "./utils.js";
+import { initialCardsList, initialCardsTemplate, likesCard } from "./utils.js";
 
 import { openPictureView } from "./modal.js";
+import{trackdeleteCard, controlLikeCard} from "./../index.js";
 
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
+function addCards(item){
+  initialCardsList.append(createCard(item))
+};
 
 function toggleLike (like){ 
-  like.classList.toggle('card__button_active')
+  like.classList.toggle('card__button_active');
 }
 
-function deleteCard ( card){
-  card.remove();
-};
+function controlStatusLike(card) {
+  const likeCard = card.querySelector('.card__button');
+  return (likeCard.classList.contains('card__button_active'));
+}
 
 function createCard(item) {
   const initialCardTemplate = initialCardsTemplate.content.querySelector(".card");
@@ -44,23 +23,27 @@ function createCard(item) {
   const caption = cardElement.querySelector(".card__title");
   const buttonLike = cardElement.querySelector(".card__button");
   const buttonDelete = cardElement.querySelector(".card__delete");
-  buttonLike.addEventListener('click', () => toggleLike (buttonLike));  
-  buttonDelete.addEventListener('click', () => deleteCard (cardElement));
+  /*replaceLike(cardElement.likes, cardElement);*/
+ /* buttonLike.addEventListener('click', () => controlLikeCard(controlStatusLike(cardElement), item._id, cardElement));  */
+  buttonDelete.addEventListener('click', () => trackdeleteCard(item._id, buttonDelete));
   img.addEventListener('click', () => openPictureView(img));
   img.src = item.link;
   img.alt = item.name;  
   caption.textContent = item.name;
 return cardElement
 };
+/*
+function replaceLike(likes, cardElement){
+  const buttonLike = cardElement.querySelector('.card__button');
+  const likes = cardElement.querySelector('.card__like-number');
+  buttonLike.toggleLike (buttonLike);
+  likes.textContent = likesCard.length;
+  return
+}*/
+
 
 function addNewCard(item) {
-  const cardElement = createCard(item);
-  initialCardsList.prepend(cardElement);
+  initialCardsList.prepend(createCard(item));
 };
 
-initialCards.forEach(function (item) {
-  const initialCardsElement = createCard(item)
-  initialCardsList.append(initialCardsElement);
-});
-
-export {addNewCard};
+export {addNewCard, addCards};
