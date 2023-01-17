@@ -1,3 +1,4 @@
+import { checkResponse } from "./utils.js";
 const config = {
     baseUrl: 'https://nomoreparties.co/v1/plus-cohort-18',
     headers: {
@@ -10,24 +11,14 @@ const config = {
     return fetch(`${config.baseUrl}/cards`, {
       headers: config.headers
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+    .then(checkResponse)
   };
 
   const getUserData = () => {
     return fetch(`${config.baseUrl}/users/me`, {
       headers: config.headers
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+    .then(checkResponse)
   };
 
   const sendProfileData = (nameProfile, aboutProfile) => {
@@ -40,12 +31,7 @@ const config = {
         about: aboutProfile
       })
   })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+  .then(checkResponse)
   };
 
   const sendProfileAvatar = (avatarProfile) => {
@@ -57,12 +43,7 @@ const config = {
         avatar: avatarProfile
       })
   })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+  .then(checkResponse)
   };
 
  const createNewCard = (nameCard, linkCard) => {
@@ -75,12 +56,7 @@ const config = {
         link:linkCard
       })
   })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+  .then(checkResponse)
   };
 
   const addLikeCard = (cardId) => {
@@ -89,10 +65,7 @@ const config = {
       headers: config.headers
     })
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
+
       });      
   };  
 
@@ -103,12 +76,7 @@ const config = {
       method: 'DELETE',
       headers: config.headers
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      });
+    .then(checkResponse)
   };
 
    const deleteCard = (cardId) => {
@@ -116,12 +84,7 @@ const config = {
       method: 'DELETE',
       headers: config.headers
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      });
+    .then(checkResponse)
   };
 
 

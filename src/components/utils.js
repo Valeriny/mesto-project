@@ -25,4 +25,13 @@ const photoTitle=popupImage.querySelector(".popup__image-title");
 const buttonsClose=document.querySelectorAll(".popup__close-button");
 
 
-export { content, profileName, profileStatus, profileAvatar, formEdit, formInput, formAvatar, buttonEdit, buttonAvatar, buttonSaveProfile, formProfileName, formProfileStatus, formProfileAvatar, formAdd, buttonAdd, buttonCreateFormAdd, buttonUpdateAvatar, formNamePlace, formLinkPlace, initialCardsList, initialCardsTemplate, popupImage, photo, buttonsClose, photoTitle}
+function checkResponse(res) {
+    if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Ошибка: ${res.status}`);
+}
+
+
+
+export { checkResponse, content, profileName, profileStatus, profileAvatar, formEdit, formInput, formAvatar, buttonEdit, buttonAvatar, buttonSaveProfile, formProfileName, formProfileStatus, formProfileAvatar, formAdd, buttonAdd, buttonCreateFormAdd, buttonUpdateAvatar, formNamePlace, formLinkPlace, initialCardsList, initialCardsTemplate, popupImage, photo, buttonsClose, photoTitle}

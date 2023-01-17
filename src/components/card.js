@@ -17,10 +17,10 @@ function createCard(userId, item) {
   const initialCardTemplate = initialCardsTemplate.content.querySelector(".card");
   const cardElement = initialCardTemplate.cloneNode(true);
   const img = cardElement.querySelector(".card__image");
-  let caption = cardElement.querySelector(".card__title");
+  const caption = cardElement.querySelector(".card__title");
   const buttonLike = cardElement.querySelector(".card__button");
   const buttonDelete = cardElement.querySelector(".card__delete");
-  let numberLikesCard=cardElement.querySelector(".card__like-number");
+  const numberLikesCard=cardElement.querySelector(".card__like-number");
   caption.textContent=item.name;
   numberLikesCard.textContent = item.likes.length;  
   if (userId != item.owner._id) {
