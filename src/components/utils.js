@@ -14,7 +14,6 @@ const buttonAvatar = document.querySelector(".profile__avatar-button");
 const formNamePlace = document.querySelector("#title");
 const formLinkPlace = document.querySelector("#link");
 const initialCardsList = document.querySelector(".cards");
-const initialCardsTemplate = document.querySelector("#cards-template");
 const formEdit = document.querySelector(".popup__edit-form");
 const formAdd = document.querySelector(".popup__add-form");
 const formAvatar = document.querySelector(".popup__avatar-form");
@@ -34,4 +33,4 @@ function checkResponse(res) {
 
 
 
-export { checkResponse, content, profileName, profileStatus, profileAvatar, formEdit, formInput, formAvatar, buttonEdit, buttonAvatar, buttonSaveProfile, formProfileName, formProfileStatus, formProfileAvatar, formAdd, buttonAdd, buttonCreateFormAdd, buttonUpdateAvatar, formNamePlace, formLinkPlace, initialCardsList, initialCardsTemplate, popupImage, photo, buttonsClose, photoTitle}
+export { checkResponse, content, profileName, profileStatus, profileAvatar, formEdit, formInput, formAvatar, buttonEdit, buttonAvatar, buttonSaveProfile, formProfileName, formProfileStatus, formProfileAvatar, formAdd, buttonAdd, buttonCreateFormAdd, buttonUpdateAvatar, formNamePlace, formLinkPlace, initialCardsList, popupImage, photo, buttonsClose, photoTitle}

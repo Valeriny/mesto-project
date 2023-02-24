@@ -63,13 +63,8 @@ const config = {
     return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
       method: 'PUT',
       headers: config.headers
-    })
-      .then(res => {
-
-      });      
+    })     
   };  
-
-
   
   const deleteLikeCard = (cardId) => {
     return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
